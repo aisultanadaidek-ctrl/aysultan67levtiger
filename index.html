@@ -1,91 +1,208 @@
 <!DOCTYPE html>
+<!-- DOCTYPE — первая строка, сообщает браузеру о современной версии HTML (Занятие 1) -->
 <html>
+<!-- html — корневой элемент, внутри него вся страница (Занятие 1) -->
 <head>
-<meta sharset="UTf-8">
-<title>aysultan_cinema</title>
-<style>
-h1 {color: red;
-font-family: arial;
-text-align: center;
-}
-body{
-background: lightblue;
-text-align: center;
-}
-
-table{
-
-border: collapse;
-}   
-th, td {
-    border: 1px solid black;
-    padding: 8px;
-}
-
-
-
-
-</style>
+    <!-- head — служебный раздел, на экране не виден (Занятие 1) -->
+    <!-- meta charset — кодировка, без неё русский текст превратится в "????" (Занятие 1) -->
+    <meta charset="UTF-8">
+    <!-- title — название страницы на вкладке браузера (Занятие 1) -->
+    <title>Aysultan Cinema</title>
+    <!-- style — стили внутри HTML. Правило: селектор { свойство: значение; } (Занятие 1) -->
+    <style>
+        body {
+            background: lightblue;      /* цвет фона названием */
+            font-family: Arial;         /* шрифт */
+        }
+        h1, h2 {                        /* группировка через запятую (Занятие 2) */
+            font-family: Arial;
+        }
+        h1 {
+            color: red;                 /* цвет текста */
+            text-align: center;         /* выравнивание: left, center, right */
+        }
+        h2 {
+            color: green;             /* цвет hex-кодом: # и 6 символов */
+        }
+        nav a {                         /* вложенность: ссылки только внутри nav (Занятие 2) */
+            color: black;
+            text-decoration: none;      /* убирает подчёркивание у ссылок */
+        }
+        .intro {                        /* класс: точка в CSS, class="intro" в HTML (Занятие 2) */
+            font-size: 20px;            /* размер шрифта в пикселях */
+            color: #1F6FB0;
+        }
+        .important {                    /* второй класс, можно вешать оба сразу (Занятие 2) */
+            background: yellow;
+        }
+        .graphic {
+            border-collapse: collapse;  /* склеивает двойные границы в одну (Занятие 2) */
+            margin: 250px;
+        }
+        th, td {
+            border: 1px solid #999999;  /* граница: толщина, тип линии, цвет */
+            padding: 8px;               /* отступ внутри ячейки */
+        }
+        #booking {                      /* id: решётка в CSS (Занятие 2) */
+            color: green;
+        }
+        .price {
+            border-collapse:collapse ;
+            color:rgb(0, 0, 0);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin:100px 50px 50px 100px;
+        }
+    </style>
 </head>
 <body>
-<h1>Лучшие новинки в мире кино!</h1>
-<h2><i>Првиветствую вас на моем сайте на нем вы сможете узнать о лучших премьерах этого года</i></h2>
-<ul>
-<li>Хорроры</li>
-<li>Боевики</li>
-<li>Комедия</li>
-<li>Дорама</li>
-<li>Сериалы</li>
-</ul>
-<img src="https://avatars.mds.yandex.net/i?id=90edf7cf742b5ded6340a75cec74b69d_l-8497133-images-thumbs&n=13"width="500" height="500">
-<a href="https://hd.kinopoisk.ru/ru-kz/film/4d1fd3e7bf7c83bf910c3e141334accb?utm_source=direct_search&utm_medium=paid_performance&utm_campaign=706699869%7CMSCAMP-3_%5BKP-P%5D_%7BWS%3AS%7D_KZ-159_goal-PL_Category-DSA-desktop&utm_content=INTid%7C01000000205707191681_205707191681%7Ccid%7C706699869%7Cgid%7C5707191681%7Caid%7C1900003416895008941%7Cpos%7Cpremium2%7Csrc%7Csearch_images.yandex.ru%7Cdvc%7Cdesktop%7Cretid%7C0%7Ckpid%7C0&utm_term=---autotargeting&source=kinopoisk_paid_performance_direct_search_706699869%7Cucnt_INTid%7C01000000205707191681_205707191681%7Ccid%7C706699869%7Cgid%7C5707191681%7Caid%7C1900003416895008941%7Cpos%7Cpremium2%7Csrc%7Csearch_images.yandex.ru%7Cdvc%7Cdesktop%7Cretid%7C0%7C30days0t&etext=&yclid=15512214021120196607&utm_referrer=yandex.kz">посмотреть фильм</a>
-<table>
-    <caption>Расписание фильмов на воскресение</caption>
-    <tr>
-        <th>время</th>
-        <th>номер зала</th>
-        <th>жанр кино</th>
-    </tr>
-    <tr>
-        <td>19:30</td>
-        <td>4</td>
-        <td>Хорроры</td>      
+    <!-- body — всё, что появится на экране (Занятие 1) -->
 
-    </tr>
-    <tr>
-        <th>15:00</th>
-        <th>7</th>
-        <th>Комедия</th>
-    </tr>
-    <tr>
-        <td>17:00</td>
-        <td>5</td>
-        <td>Боевики</td>
-    </tr>
-    <tr>
-        <th>11:30</th>
-        <th>2</th>
-        <th>Дорама</th>
-    </tr>
-    <tr>
-        <td>9:00</td>
-        <td>1</td>
-        <td>драма</td>
-    </tr>
+    <!-- h1 — заголовок страницы, на странице должен быть один (Занятие 1) -->
+    <h1>Лучшие новинки в мире кино!</h1>
+    <!-- h2 — заголовок второго уровня, i — курсив (Занятие 1) -->
+    <h2><i>Приветствую вас на моём сайте! Здесь вы узнаете о лучших премьерах года</i></h2>
+
+    <!-- nav — меню. Якорные ссылки href="#id" ведут к элементу с таким id (Занятие 1) -->
+    <nav>
+        <a href="#genres">Жанры</a> |
+        <a href="#schedule">Расписание</a> |
+        <a href="#booking">Бронь билетов</a>
+    </nav>
+    <hr> <!-- hr — горизонтальная линия, одиночный тег (Занятие 1) -->
+
+    <!-- p — абзац, class="intro" — метка для CSS (Занятие 2) -->
+    <p class="intro">
+        Добро пожаловать в <b>Aysultan Cinema</b>! <!-- b — жирный текст (Занятие 1) -->
+        <br> <!-- br — перенос строки без нового абзаца (Занятие 1) -->
+        Мы собрали <mark>лучшие фильмы</mark> на любой вкус. <!-- mark — выделение маркером (Занятие 1) -->
+    </p>
+    <!-- Два класса через пробел — применятся стили обоих (Занятие 2) -->
+    <p class="intro important">
+        Скидка 20% на сеансы в воскресенье! Площадь: a<sup>2</sup>, вода: H<sub>2</sub>O
+        <!-- sup — надстрочный текст, sub — подстрочный (Занятие 1) -->
+    </p>
+
+    <!-- id — уникальное имя элемента, нужно для якорной ссылки (Занятие 1, 2) -->
+    <h2 id="genres">Жанры</h2>
+    <!-- ul — маркированный список, li — пункт списка (Занятие 1) -->
+    <ul>
+        <li>Хорроры</li>
+        <li>Боевики</li>
+        <li>Комедия</li>
+        <li>Дорама</li>
+        <li>Сериалы</li>
+    </ul>
+    <!-- ol — нумерованный список, цифры ставятся сами (Занятие 1) -->
+    <ol>
+        <li>Выберите сеанс</li>
+        <li>Заполните форму</li>
+    </ol>
+
+    <!-- img — картинка: src — адрес, alt — описание, width — ширина (Занятие 1) -->
+    <img src="https://avatars.mds.yandex.net/i?id=90edf7cf742b5ded6340a75cec74b69d_l-8497133-images-thumbs&n=13" alt="Афиша фильма" width="300">
+    <!-- a — ссылка, target="_blank" открывает в новой вкладке (Занятие 1) -->
+    <p><a href="https://hd.kinopoisk.ru/" target="_blank">Посмотреть фильм</a></p>
+    <!-- Относительная ссылка — путь к файлу внутри проекта (Занятие 1) -->
+    <p><a href="about.html">О кинотеатре</a></p>
+
+    <h2 id="schedule">Расписание</h2>
+    <!-- table — таблица, tr — строка, th — заголовок, td — ячейка (Занятие 2) -->
+    <table class="graphic">
+        <caption>Расписание на воскресенье</caption> <!-- caption — подпись таблицы -->
+        <tr>
+            <th>Время</th>
+            <th>Зал</th>
+            <th>Жанр</th>
+        </tr>
+        <tr>
+            <td>9:00</td>
+            <td>1</td>
+            <td>Драма</td>
+        </tr>
+        <tr>
+            <td>11:30</td>
+            <td>2</td>
+            <td>Дорама</td>
+        </tr>
+        <!-- colspan — ячейка на 3 столбца, поэтому в строке одна ячейка (Занятие 2) -->
+        <tr>
+            <td colspan="3">Перерыв</td>
+        </tr>
+        <tr>
+            <td>15:00</td>
+            <!-- rowspan — ячейка на 2 строки, в следующей строке ячеек на одну меньше (Занятие 2) -->
+            <td rowspan="2">7</td>
+            <td>Комедия</td>
+        </tr>
+        <tr>
+            <td>17:00</td>
+            <td>Боевики</td>
+        </tr>
+    </table>
+    <table class="price">
+        <tr>
+            <th>№</th>
+            <th>фильм</th>
+            <th>цена</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>человек паук</td>
+            <td>3500тг</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>моана</td>
+            <td>3000тг</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>кот в сопогах</td>
+            <td>2800тг</td>
+        </tr>
 
 
-</table>
-<input type="text" placeholder="как тебя зовут?">
-<input type="email" placeholder="адрес электронной почты">
-<input type="number" placeholder="сколько лет">
-<input type="date" placeholder="дата рождение">
-<label for="name>">множественный выбор</label>
-<input type="checkbox" id="name">
-<input type="checkbox" placeholder="вариант 1">
-<input type="checkbox" placeholder="вариант 1">
-<input type="radio" placeholder="вариант 2">
-<input type="password" placeholder="без пароля нет кароля">
+    </table>
 
+    <h2 id="booking">Бронь билетов</h2>
+    <!-- form — форма, внутри поля ввода (Занятие 2) -->
+    <form>
+        <!-- label связан с полем: for должен совпадать с id (Занятие 2) -->
+        <label for="name">Имя:</label>
+        <!-- input type="text" — строка, placeholder — подсказка, required — обязательное поле -->
+        <input type="text" id="name" placeholder="Как тебя зовут?" required>
+        <br>
+        <label for="mail">Почта:</label>
+        <input type="email" id="mail" placeholder="pochta@mail.kz"> <!-- email — проверит @ -->
+        <br>
+        <label for="age">Возраст:</label>
+        <input type="number" id="age"> <!-- number — число со стрелками -->
+        <br>
+        <label for="date">Дата:</label>
+        <input type="date" id="date"> <!-- date — календарь -->
+        <br>
+        <label for="pass">Пароль:</label>
+        <input type="password" id="pass"> <!-- password — символы скрыты -->
+        <br>
+        <!-- checkbox — флажок, можно отметить несколько -->
+        <input type="checkbox" id="horror"> <label for="horror">Хорроры</label>
+        <input type="checkbox" id="action"> <label for="action">Боевики</label>
+        <br>
+        <!-- radio — выбор одного; у группы одинаковый name -->
+        <input type="radio" name="level" id="beg"> <label for="beg">Начинающий</label>
+        <input type="radio" name="level" id="pro"> <label for="pro">Опытный</label>
+        <br>
+        <!-- select — выпадающий список, option — его пункты -->
+        <select>
+            <option>Астана</option>
+            <option>Алматы</option>
+            <option>Костанай</option>
+        </select>
+        <br>
+        <!-- textarea — многострочное поле, rows — число строк -->
+        <textarea rows="5"></textarea>
+        <br>
+        <button type="submit">Забронировать</button> <!-- кнопка отправки формы -->
+    </form>
 </body>
 </html>
-
